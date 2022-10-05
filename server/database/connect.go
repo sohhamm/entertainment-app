@@ -16,7 +16,7 @@ type DbInstance struct {
 
 var DB DbInstance
 
-func connectDB() {
+func ConnectDB() {
 	var err error
 
 	db_url := config.Config("DATABASE_URL")
@@ -41,7 +41,7 @@ func connectDB() {
 	sqlDB.SetMaxIdleConns(10)
 	sqlDB.SetMaxOpenConns(100)
 
-	db.Logger = logger.Default.LogMode(logger.Info)
+	// db.Logger = logger.Default.LogMode(logger.Info)
 
 	log.Println("Running migrations .... 🚂")
 
